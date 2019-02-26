@@ -79,6 +79,7 @@ public class SinglyLinkedList {
         size++;
 
      }
+
      public void insert(int data){
         if(head == null){
             insertHead(data);
