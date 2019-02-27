@@ -40,6 +40,10 @@ public class SinglyLinkedList {
     public static void main(String[] args) {
         SinglyLinkedList linkedList = new SinglyLinkedList();
         System.out.println(linkedList);
+        for (int i = 0; i < 5; i++) {
+            linkedList.insert(i+1);
+
+        }
         linkedList.insert(42);
         linkedList.insert(62);
         System.out.println(linkedList);
@@ -108,8 +112,6 @@ public class SinglyLinkedList {
         return response;
 
     }
-
-}
      private int removeAfter(Node node) {
          int response = -1;
          Node temp = node.next;
@@ -123,7 +125,7 @@ public class SinglyLinkedList {
      public int remove(int data){
     int response = -1;
     Node temp = this.head;
-    if(temp.data = data){
+    if(temp.data == data){
         response = removeHead();
     }
     else{
@@ -137,4 +139,4 @@ public class SinglyLinkedList {
     }
     return response;
 
-}
+}}
