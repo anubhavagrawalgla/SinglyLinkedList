@@ -98,11 +98,15 @@ public class SinglyLinkedList {
     private int removeHead() {
         int response = -1;
         Node temp = this.head;
-        if(temp != null)
-        response= temp.data;
-        this.head = this.head.next;
+        if(temp != null){
+            this.size--;
+            response= temp.data;
+            this.head = this.head.next;
+        }
+        return response;
+
     }
-     return response;
+
 }
      private int removeAfter(Node node){
     int response = -1;
