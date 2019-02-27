@@ -53,9 +53,9 @@ public class SinglyLinkedList {
         response.append("[");
 
         Node temp = this.head;
-        while (temp != null){
+        while (temp != null) {
             response.append(temp.getData());
-            if(temp.next != null){
+            if (temp.next != null) {
                 response.append(" ==> ");
             }
             temp = temp.next;
@@ -67,30 +67,51 @@ public class SinglyLinkedList {
         return response.toString();
 
     }
-    private void insertHead(int data){
+
+    private void insertHead(int data) {
         Node newNode = new Node(data, this.head);
-        this.head  = newNode;
+        this.head = newNode;
         size++;
 
     }
-    private void insertAfter(int data, Node node){
+
+    private void insertAfter(int data, Node node) {
         Node newNode = new Node(data, node.next);
         node.next = newNode;
         size++;
 
-     }
+    }
 
-     public void insert(int data){
-        if(head == null){
+    public void insert(int data) {
+        if (head == null) {
             insertHead(data);
-        }
-        else{
+        } else {
             Node temp = this.head;
-            while (temp.next != null){
+            while (temp.next != null) {
                 temp = temp.next;
             }
-            insertAfter(data,temp);
+            insertAfter(data, temp);
 
         }
-     }
+    }
+
+    private int removeHead() {
+        int response = -1;
+        Node temp = this.head;
+        if(temp != null)
+        response= temp.data;
+        this.head = this.head.next;
+    }
+     return response;
+}
+     private int removeAfter(Node node){
+    int response = -1;
+    Node temp = node.next;
+    if(temp != null){
+        response = temp.data;
+        node.next = temp.next;
+        size --;
+    }
+    return response;
+
 }
