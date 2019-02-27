@@ -43,6 +43,8 @@ public class SinglyLinkedList {
         linkedList.insert(42);
         linkedList.insert(62);
         System.out.println(linkedList);
+        linkedList.remove(2);
+        System.out.println(linkedList);
 
     }
 
@@ -108,13 +110,30 @@ public class SinglyLinkedList {
     }
 
 }
-     private int removeAfter(Node node){
+     private int removeAfter(Node node) {
+         int response = -1;
+         Node temp = node.next;
+         if (temp != null) {
+             response = temp.data;
+             node.next = temp.next;
+             size--;
+         }
+         return response;
+     }
+     public int remove(int data){
     int response = -1;
-    Node temp = node.next;
-    if(temp != null){
-        response = temp.data;
-        node.next = temp.next;
-        size --;
+    Node temp = this.head;
+    if(temp.data = data){
+        response = removeHead();
+    }
+    else{
+        while(temp != null){
+            if(temp.data == data){
+                response = removeAfter(temp);
+                break;
+            }
+            temp = temp.next;
+        }
     }
     return response;
 
